@@ -2,16 +2,15 @@
 
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-        <referenceContainer name="product.info.main">
-            <block class="DvCampus\Catalog\Block\Product\View\Demo"
-                   name="product.info.demo"
-                   before="product.info.details"
-                   template="DvCampus_Catalog::product/view/demo.phtml">
-                <arguments>
-                    <argument name="int_variable" xsi:type="number">777</argument>
-                    <argument name="str_variable" xsi:type="string">Hello</argument>
-                </arguments>
-            </block>
+        <referenceContainer name="after.body.start">
+            <container name="demo.sore.head" htmlTag="div">
+                <block class="Magento\Cms\Block\Block" name="demo_header">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">demo_header</argument>
+                    </arguments>
+                </block>
+            </container>
+
         </referenceContainer>
     </body>
 </page>

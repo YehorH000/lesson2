@@ -121,6 +121,19 @@
 
 <IfModule mod_ssl.c>
 
+#########################################################
+## enable rewrites
+
+    Options +FollowSymLinks
+    RewriteEngine on
+
+    SetEnvIf Host .*yehorh.local.* MAGE_RUN_CODE=base
+    SetEnvIf Host .*yehorh.local.* MAGE_RUN_TYPE=website
+
+    SetEnvIf Host .*yehor-hrabyna.local.* MAGE_RUN_CODE=testing_new_website
+    SetEnvIf Host .*yehor-hrabyna.local.* MAGE_RUN_TYPE=website
+
+
 ############################################
 ## make HTTPS env vars available for CGI mode
 

@@ -1,3 +1,6 @@
 <?php /** @var \Magento\Framework\View\Element\Template $block */ ?>
 <p><?= $block->escapeHtml(__('Parent Block')) ?></p>
 <?= $block->getChildHtml('product.info.demo.testAlias') ?>
+<p>This is a demo product. You can add them to cart and place order only to test the Magento capabilities</p>
+
+<div id="js-demo" data-mage-init='{"dvcampus_catalog_demoFunction": {}}'></div>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<page  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+    <referenceContainer name="sidebar.additional">
+        <container name="left_column_image_block" htmlTag="div"  after="block-wishlist">
+            <block class="Magento\Cms\Block\Block" name="left_column_image">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">left_column_image</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Cms\Block\Block" name="left_column_text" after="left_column_image">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">left_column_text</argument>
+                </arguments>
+            </block>
+        </container>
+    </referenceContainer>
+    </body>
+</page>

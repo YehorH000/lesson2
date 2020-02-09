@@ -1,0 +1,15 @@
+<?php /** @var \Magento\Framework\View\Element\Template $block */ ?>
+<div id="dv-campus-customer-chat-sidebar"
+     style="display: none;"
+     data-mage-init='{"dvCampus_customerChat_sidebar": {}}'
+>
+    <h3><?= $block->escapeHtml(__('Chat')) ?></h3>
+    <ul id="dv-campus-customer-chat-list"></ul>
+    <button type="button"
+            class="action primary"
+            id="dv-campus-customer-chat-edit-button"
+    ><?= $block->escapeHtml(__('Open Chat')) ?></button>
+    <button type="button"
+            id="dv-campus-customer-chat-close-sidebar-button"
+    ><?= $block->escapeHtml(__('X')) ?></button>
+</div>

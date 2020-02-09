@@ -239,6 +239,8 @@ return [
         'Amazon_Payment' => 1,
         'Dotdigitalgroup_Email' => 1,
         'DvCampus_Catalog' => 1,
+        'DvCampus_ControllerDemo' => 1,
+        'DvCampus_CustomerChat' => 1,
         'DvCampus_Yehorh_Cms' => 1,
         'Klarna_Core' => 1,
         'Klarna_Ordermanagement' => 1,

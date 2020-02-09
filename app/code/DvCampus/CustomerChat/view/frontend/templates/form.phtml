@@ -1,0 +1,56 @@
+<?php /** @var \Magento\Framework\View\Element\Template $block */ ?>
+<div style="display: none;">
+    <form class="form"
+          action="javascript:void(0);"
+          id="dv-campus-customer-chat-form"
+          method="post"
+          data-mage-init='{"dvCampus_customerChat_form":{
+            "action": "<?= $block->escapeUrl($block->getUrl('dvCampus/chat/save')) ?>"
+          }}'
+          onsubmit="return false;"
+    >
+        <fieldset class="fieldset">
+            <legend class="legend">
+                <span><?= $block->escapeHtml(__('Chat with Admin')) ?></span>
+            </legend>
+            <br/>
+            <div class="chat">
+                <?= $block->escapeHtml(__('Your messages are here:')) ?>
+                <div class="mess_of_chat">
+
+                </div>
+            </div>
+            <br/>
+            <div class="field name required">
+                <div class="field note no-label">
+                    <?= $block->escapeHtml(__('Write your name here:')) ?>
+                </div>
+                <div class="control">
+                    <input name="name"
+                           title="<?= $block->escapeHtmlAttr(__('Name')) ?>"
+                           class="input-text"
+                           type="text"
+                           data-validate="{required:true}"
+                           id="name"
+                    />
+                </div>
+            </div>
+            <div class="field email required">
+                <div class="field note no-label">
+                    <?= $block->escapeHtml(__('Write your message here:')) ?>
+                </div>
+                <div class="control">
+                    <textarea name="message" id="messForAdmin" data-validate="{required:true}" cols="30" rows="10"></textarea>
+                </div>
+            </div>
+        </fieldset>
+        <div class="actions-toolbar">
+            <div class="primary">
+                <input type="hidden" name="hideit" id="hideit" value=""/>
+                <button type="submit" title="<?= $block->escapeHtmlAttr(__('Send')) ?>" class="action submit primary">
+                    <span><?= $block->escapeHtml(__('Send')) ?></span>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

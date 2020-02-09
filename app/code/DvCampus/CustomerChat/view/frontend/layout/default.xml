@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd"
+>
+    <body>
+        <referenceBlock name="header-wrapper">
+            <block class="Magento\Framework\View\Element\Template"
+                   name="dvCampus.customerChat.buttonMobile"
+                   template="DvCampus_CustomerChat::open_button_mobile.phtml"
+            />
+            <block class="Magento\Framework\View\Element\Template"
+                   name="dvCampus.customerChat.customerChat"
+                   template="DvCampus_CustomerChat::sidebar.phtml"
+            />
+            <block class="Magento\Framework\View\Element\Template"
+                   name="dvCampus.customerChat.form"
+                   template="DvCampus_CustomerChat::form.phtml"
+            />
+        </referenceBlock>
+        <referenceBlock name="before.body.end">
+            <container name="dvCampus.customerChat">
+                <block class="Magento\Framework\View\Element\Template"
+                       name="dvCampus.customerChat.button"
+                       template="DvCampus_CustomerChat::open_button.phtml"
+                />
+            </container>
+        </referenceBlock>
+    </body>
+</page>

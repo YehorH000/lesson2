@@ -9,11 +9,11 @@ class Index extends \Magento\Framework\App\Action\Action implements
 {
     public function execute()
     {
+        $response = $this->resultFactory->create(ResultFactory::TYPE_JSON);
+        $response->setData([
+            'message' => 'Send'
+        ]);
+
+        return $response;
     }
-    public function __construct(Http $request) {
-        $this->request = $request;
-    }
-    public function getPost() {
-    $postData = $this->request->getPost();
-}
 }

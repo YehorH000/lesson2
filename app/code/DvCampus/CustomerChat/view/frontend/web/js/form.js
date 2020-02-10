@@ -69,15 +69,10 @@ define([
                 success: function (response) {
                     $('body').trigger('processStop');
                     alert({
-                        title: $.mage.__(response.status),
+                        title: $.mage.__('Success'),
                         content: $.mage.__(response.message)
                     });
-
-                    if (response.status === 'Success') {
-                        $.mage.cookies.set(this.options.cookieName, true);
-                    }
                 },
-
                 /** @inheritdoc */
                 error: function () {
                     $('body').trigger('processStop');

@@ -1,0 +1,24 @@
+{
+    "dv_campus_customer_chat": {
+        "column": {
+            "message_id": true,
+            "author_id": true,
+            "website_id": true,
+            "created_at": true,
+            "author_type": true,
+            "message": true,
+            "chat_hash": true,
+            "author_name": true,
+        },
+        "index": {
+            "DV_CAMPUS_CUSTOMER_CHAT_MESSAGE_ID": true,
+            "DV_CAMPUS_CUSTOMER_CHAT_CHAT_HASH": true,
+            "DV_CAMPUS_CUSTOMER_CHAT_WEBSITE_ID": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "DV_CAMPUS_CUSTOMER_CHAT_MESSAGE_ID_WEBSITE_ID_CHAT_HASH": true,
+            "DV_CAMPUS_CUSTOMER_CHAT_CUSTOMER_WEBSITE": true
+        }
+    }
+}

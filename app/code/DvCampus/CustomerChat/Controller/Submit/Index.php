@@ -3,7 +3,8 @@ declare(strict_types=1);
 
 namespace DvCampus\CustomerChat\Controller\Submit;
 
-use \Magento\Framework\App\Request\Http;
+use Magento\Framework\Controller\ResultFactory;
+
 class Index extends \Magento\Framework\App\Action\Action implements
     \Magento\Framework\App\Action\HttpPostActionInterface
 {

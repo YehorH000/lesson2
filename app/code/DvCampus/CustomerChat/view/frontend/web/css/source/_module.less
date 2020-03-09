@@ -51,4 +51,46 @@
     #dv-campus-customer-chat-form {
       padding-bottom: @modal-popup__padding;
     }
+
+    #DvCampus_ChatPreferences_Messages {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      .message-item {
+        clear: both;
+        display: inline-block;
+      }
+    }
+
+    .admin-message {
+      float: left;
+
+      .admin-message-main-content {
+        background: @color-red12;
+        border: 2px solid @color-red11;
+        margin-bottom: 2px;
+        padding: 10px;
+        color: #fff;
+      }
+    }
+
+    .message-chat-item {
+      float: right;
+
+      .getTime {
+        color: @color-gray-middle4;
+        float: right;
+      }
+
+      .customer-message-main-content {
+        background: @color-light-green1;
+        border: 2px solid @color-dark-green1;
+        color: #fff;
+        clear: both;
+        display: table;
+        margin-bottom: 2px;
+        padding: 10px;
+      }
+    }
   }

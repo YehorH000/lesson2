@@ -5,7 +5,7 @@
           id="dv-campus-customer-chat-form"
           method="post"
           data-mage-init='{"dvCampus_customerChat_form":{
-            "action": "<?= $block->escapeUrl($block->getUrl('dvCampus/chat/save')) ?>"
+            "action": "<?= $block->escapeUrl($block->getUrl('dv_campus_chat/chat/chat')) ?>"
           }}'
           onsubmit="return false;"
     >
@@ -17,7 +17,7 @@
             <div class="chat">
                 <?= $block->escapeHtml(__('Your messages are here:')) ?>
                 <div class="mess_of_chat">
-
+                    <ul id="DvCampus_ChatPreferences_Messages"></ul>
                 </div>
             </div>
             <br/>

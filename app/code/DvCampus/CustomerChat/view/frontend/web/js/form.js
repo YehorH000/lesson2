@@ -7,7 +7,7 @@ define([
 
     $.widget('dvCampusCustomerChat.form', {
         options: {
-            action: ''
+            ChatPreferencesMessages: '#DvCampus_ChatPreferences_Messages'
         },
 
         /**
@@ -21,12 +21,18 @@ define([
             $(this.element).on('submit.dvCampus_customerChat', $.proxy(this.saveChat, this));
         },
 
+        /**
+         * @private
+         */
         _destroy: function () {
             this.modal.closeModal();
             $(this.element).off('submit.dvCampus_customerChat');
             this.modal.destroy();
         },
 
+        /**
+         * Save Chat
+         */
         saveChat: function () {
             if (!this.validateForm()) {
                 return;
@@ -68,21 +74,35 @@ define([
                 /** @inheritdoc */
                 success: function (response) {
                     $('body').trigger('processStop');
+                    this.getMessage(response);
                     alert({
-                        title: $.mage.__('Success'),
-                        content: $.mage.__(response.message)
-                    });
-                },
-                /** @inheritdoc */
-                error: function () {
-                    $('body').trigger('processStop');
-                    alert({
-                        title: $.mage.__('Error'),
-                        content: $.mage.__('There is some problems! Please wait!')
+                        title: $.mage.__('Success')
                     });
                 }
             });
         },
+
+        /**
+         * Get Message
+         */
+        getMessage: function (messageInfo) {
+            var date = new Date(),
+             time = date.getHours() + ':hours ' + date.getMinutes() + ':minutes ' + date.getSeconds() + ':seconds',
+             $messagesChat = $('#DvCampus_ChatPreferences_Messages'),
+             $messagesChatItem = $('<li>').addClass('message-chat-item'),
+             $name = $('<h2>').addClass('name').text(messageInfo.name),
+             $getTime = $('<h3>').addClass('getTime').text(time),
+             $message = $('<p>').addClass('customer-message-main-content').text(messageInfo.message),
+             $messageAdminItem = $('<li>').addClass('admin-message message-item'),
+             $adminMessage = $('<p>').addClass('admin-message-main-content').text('Please wait 5 minutes!');
+
+            $messagesChatItem.append($name);
+            $messagesChatItem.append($getTime);
+            $messagesChatItem.append($message);
+            $messagesChat.append($messagesChatItem);
+            $messageAdminItem.append($adminMessage);
+            $messagesChat.append($messageAdminItem);
+        }
     });
 
     return $.dvCampusCustomerChat.form;

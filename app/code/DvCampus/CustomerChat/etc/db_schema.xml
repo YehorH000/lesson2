@@ -43,7 +43,7 @@
                     referenceId="DV_CAMPUS_CUSTOMER_CHAT_CUSTOMER_WEBSITE"
                     table="dv_campus_customer_chat"
                     column="website_id"
-                    referenceTable="customer_website"
+                    referenceTable="store_website"
                     referenceColumn="website_id"
                     onDelete="CASCADE"
         />
